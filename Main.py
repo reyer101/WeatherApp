@@ -3,7 +3,7 @@ import WeatherConsts as Consts
 
 
 def main():
-    api = WeatherAPI(Consts.KEY, "Placentia")
+    api = WeatherAPI(Consts.KEY)
 
     print 'Enter the name of your city for current weather'
     city = raw_input('City: ')

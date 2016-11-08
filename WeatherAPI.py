@@ -3,9 +3,9 @@ import WeatherConsts as Consts
 
 
 class WeatherAPI(object):
-    def __init__(self, key, _city, _country = 'US', _zip = 0 ):
+    def __init__(self, key):
         self.api_key = key
-        self.city = _city
+
 
     def _request(self, api_url):
         response = requests.get(Consts.URL['base'].format(
