@@ -41,6 +41,10 @@ def main():
     maxTemperature = weather['main']['temp_max']
     maxTempF = TempConverter.convertKtoF(maxTemperature)
     print ('Highs today are: %.2f F' % maxTempF)
+
+    humidity = weather['main']['humidity']
+    print ('Humidity: ' + str (humidity) + '%')
+    
 if __name__ == "__main__":
     main()
 
