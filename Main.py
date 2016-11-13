@@ -20,6 +20,7 @@ def main():
     sunset_time = TimeConverter.time_convert(weather['sys']['sunset'])
     sunrise_time = TimeConverter.time_convert(weather['sys']['sunrise'])
 
+    #Wind speed measured in meters per second (mps)
     temperature = weather['main']['temp']
     tempF = TempConverter.convertKtoF(temperature)
 
