@@ -47,7 +47,27 @@ def main():
     
     #Wind speed measured in meters per second (mps)
     windSpeed = weather['wind']['speed']*2.23694
-    print ('Wind Speed: %.2f' % (windSpeed) + " mph") 
+    print ('Wind Speed: %.2f' % (windSpeed) + " mph")
+
+    windDirection = weather['wind']['deg']
+
+    if windDirection > 22.5 and windDirection < 67.5:
+        cardinalDirection = 'NE'
+    elif windDirection > 67.6 and windDirection < 112.5:
+        cardinalDirection = 'E'
+    elif windDirection > 112.6 and windDirection < 157.5:
+        cardinalDirection = 'SE'
+    elif windDirection > 157.6 and windDirection < 202.5:
+        cardinalDirection = 'S'
+    elif windDirection > 202.6 and windDirection < 247.5:
+        cardinalDirection = 'SW'
+    elif windDirection > 247.6 and windDirection < 292.5:
+        cardinalDirection = 'W'
+    elif windDirection > 292.6 and windDirection < 337.5:
+        cardinalDirection = 'NW'
+    else:
+        cardinalDirection = 'N'
+    print ('Wind Direction: ' + cardinalDirection)
     
 if __name__ == "__main__":
     main()
