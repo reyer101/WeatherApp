@@ -48,7 +48,8 @@ def main():
     #Wind speed measured in meters per second (mps)
     windSpeed = weather['wind']['speed']*2.23694
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
-
+    
+    #If deg is not given, does not work
     windDirection = weather['wind']['deg']
 
     if windDirection > 22.5 and windDirection < 67.5:
