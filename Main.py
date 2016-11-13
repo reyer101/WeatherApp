@@ -32,7 +32,9 @@ def main():
     tempC = TempConverter.convertKtoC(temperature)
     print ('Current temperature in Celsius: %.2f C' % tempC)
     
-    description = weather['weather'][0]['description']
+    description = weather['weather'][0]['description'].title()
+
+
     print ('Sky description: ' + description)
 
     minTemperature = weather['main']['temp_min']
