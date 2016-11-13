@@ -20,7 +20,6 @@ def main():
     sunset_time = TimeConverter.time_convert(weather['sys']['sunset'])
     sunrise_time = TimeConverter.time_convert(weather['sys']['sunrise'])
 
-    #Wind speed measured in meters per second (mps)
     temperature = weather['main']['temp']
     tempF = TempConverter.convertKtoF(temperature)
 
@@ -34,8 +33,6 @@ def main():
     print ('Current temperature in Celsius: %.2f C' % tempC)
     
     description = weather['weather'][0]['description'].title()
-
-
     print ('Sky description: ' + description)
 
     minTemperature = weather['main']['temp_min']
@@ -47,6 +44,10 @@ def main():
 
     humidity = weather['main']['humidity']
     print ('Humidity: ' + str (humidity) + '%')
+    
+    #Wind speed measured in meters per second (mps)
+    windSpeed = weather['wind']['speed']*2.23694
+    print ('Wind Speed: %.2f' % (windSpeed) + " mph") 
     
 if __name__ == "__main__":
     main()
