@@ -20,6 +20,7 @@ def main():
     sunset_time = TimeConverter.time_convert(weather['sys']['sunset'])
     sunrise_time = TimeConverter.time_convert(weather['sys']['sunrise'])
 
+    #Wind speed measured in meters per second (mps)
     temperature = weather['main']['temp']
     tempF = TempConverter.convertKtoF(temperature)
 
@@ -32,7 +33,9 @@ def main():
     tempC = TempConverter.convertKtoC(temperature)
     print ('Current temperature in Celsius: %.2f C' % tempC)
     
-    description = weather['weather'][0]['description']
+    description = weather['weather'][0]['description'].title()
+
+
     print ('Sky description: ' + description)
 
     minTemperature = weather['main']['temp_min']
