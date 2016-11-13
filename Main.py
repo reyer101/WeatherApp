@@ -52,7 +52,7 @@ def main():
     #If deg is not given, does not work
     windDirection = weather['wind']['deg']
 
-    if windDirection > 22.5 and windDirection < 67.5:
+    if windDirection > 22.6 and windDirection < 67.5:
         cardinalDirection = 'NE'
     elif windDirection > 67.6 and windDirection < 112.5:
         cardinalDirection = 'E'
