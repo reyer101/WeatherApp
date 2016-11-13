@@ -26,8 +26,6 @@ def main():
     print ('Current time: ' + time)
     print ('Sunrise: ' + sunrise_time)
     print ('Sunset: ' + sunset_time)
-    print ('Current temperature in Fahrenheit: ')
-    print ("%.2f" % tempF)
 
     print ('Current temperature in Fahrenheit: %.2f F' % tempF)
 
