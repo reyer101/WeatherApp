@@ -15,11 +15,16 @@ def main():
 
     temperature = weather['main']['temp']
     tempF = TempConverter.convertKtoF(temperature)
-    print ('Current temperature in Fahrenheit: ')
-    print ("%.2f" % tempF)
+    print ('Current temperature in Fahrenheit: %.2f F' % tempF)
     tempC = TempConverter.convertKtoC(temperature)
-    print ('Current temperature in Celsius: ')
-    print ("%.2f" % tempC)
+    print ('Current temperature in Celsius: %.2f C' % tempC)
+
+    minTemperature = weather['main']['temp_min']
+    minTempF = TempConverter.convertKtoF(minTemperature)
+    print ('Lows today are: %.2f F' % minTempF)
+    maxTemperature = weather['main']['temp_max']
+    maxTempF = TempConverter.convertKtoF(maxTemperature)
+    print ('Highs today are: %.2f F' % maxTempF)
 if __name__ == "__main__":
     main()
 
