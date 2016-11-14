@@ -2,6 +2,8 @@ from WeatherAPI import WeatherAPI
 import WeatherConsts as Consts
 import TempConverter
 import TimeConverter
+import convert2cardinal
+
 
 
 def main():
@@ -11,7 +13,7 @@ def main():
     city = raw_input('City: ')
 
     weather = api.getWeather(city)
-
+    print ('\n')
     print (weather)
 
     #Gets the current time and formats it like 02:00pm
@@ -23,7 +25,7 @@ def main():
     temperature = weather['main']['temp']
     tempF = TempConverter.convertKtoF(temperature)
 
-    print ('Current time: ' + time)
+    print ('\nCurrent time: ' + time)
     print ('Sunrise: ' + sunrise_time)
     print ('Sunset: ' + sunset_time)
 
@@ -37,10 +39,14 @@ def main():
 
     minTemperature = weather['main']['temp_min']
     minTempF = TempConverter.convertKtoF(minTemperature)
+    minTempC = TempConverter.convertKtoC(minTemperature)
     print ('Lows today are: %.2f F' % minTempF)
+    print ('Lows today are: %.2f C' % minTempC)
     maxTemperature = weather['main']['temp_max']
     maxTempF = TempConverter.convertKtoF(maxTemperature)
+    maxTempC = TempConverter.convertKtoC(maxTemperature)
     print ('Highs today are: %.2f F' % maxTempF)
+    print ('Highs today are: %.2f C' % maxTempC)
 
     humidity = weather['main']['humidity']
     print ('Humidity: ' + str (humidity) + '%')
@@ -51,24 +57,9 @@ def main():
     
     #If deg is not given, does not work
     windDirection = weather['wind']['deg']
-
-    if windDirection > 22.6 and windDirection < 67.5:
-        cardinalDirection = 'NE'
-    elif windDirection > 67.6 and windDirection < 112.5:
-        cardinalDirection = 'E'
-    elif windDirection > 112.6 and windDirection < 157.5:
-        cardinalDirection = 'SE'
-    elif windDirection > 157.6 and windDirection < 202.5:
-        cardinalDirection = 'S'
-    elif windDirection > 202.6 and windDirection < 247.5:
-        cardinalDirection = 'SW'
-    elif windDirection > 247.6 and windDirection < 292.5:
-        cardinalDirection = 'W'
-    elif windDirection > 292.6 and windDirection < 337.5:
-        cardinalDirection = 'NW'
-    else:
-        cardinalDirection = 'N'
-    print ('Wind Direction: ' + cardinalDirection)
+    
+    #converts direction to NE, E, SE, S, SW, W, NW, or, N
+    print ('Wind Direction: ' + convert2cardinal.convert2cardinal(windDirection))
     
 if __name__ == "__main__":
     main()
