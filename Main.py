@@ -51,7 +51,7 @@ def main():
     humidity = weather['main']['humidity']
     print ('Humidity: ' + str (humidity) + '%')
     
-    #Wind speed measured in meters per second (mps)
+    #Wind speed measured in meters per second (mps) 
     windSpeed = weather['wind']['speed']*2.23694
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
     
