@@ -1,4 +1,4 @@
-#converts direction to NE, E, SE, S, SW, W, NW, or, N
+#converts direction to NE, E, SE, S, SW, W, NW, or, N 
 
 def convert2cardinal(windDirection):
     if windDirection > 22.6 and windDirection < 67.5:
