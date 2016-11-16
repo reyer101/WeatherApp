@@ -12,9 +12,15 @@ def main():
     print ('Enter the name of your city for current weather')
     city = raw_input('City: ')
 
-    weather = api.getWeather(city)
+    weather = api.getWeatherCity(city)
+
+    weather_zip = api.getWeatherZip(94040)
     print ('\n')
-    print (weather)
+    #print (weather)
+
+    print (weather_zip)
+
+    ## weather['wind']['deg']
 
     #Gets the current time and formats it like 02:00pm
     time = TimeConverter.current_time()

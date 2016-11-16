@@ -14,10 +14,20 @@ class WeatherAPI(object):
 
         return response.json()
 
-    def getWeather(self, city):
+    def getWeatherCity(self, city):
 
         response = self._request(Consts.URL['current'].format(
             city=city,
+            key=Consts.KEY
+        ))
+
+        return response
+
+    def getWeatherZip(self, zip):
+
+        response = self._request(Consts.URL['current_zip'].format(
+            zip=zip,
+            country='us',
             key=Consts.KEY
         ))
 
