@@ -58,18 +58,18 @@ def cityWeather(city, api_key):
 
 def zipWeather(zip_code, api_key):
     #zip_api_key = api_key;
-    weather = api_key.getWeatherZip(zip_code)
-    print (weather)
+    weather_zip = api_key.getWeatherZip(zip_code)
+    print (weather_zip)
 
     ## weather['wind']['deg']
 
     #Gets the current time and formats it like 02:00pm
     time = TimeConverter.current_time()
 
-    sunset_time = TimeConverter.time_convert(weather['sys']['sunset'])
-    sunrise_time = TimeConverter.time_convert(weather['sys']['sunrise'])
+    sunset_time = TimeConverter.time_convert(weather_zip['sys']['sunset'])
+    sunrise_time = TimeConverter.time_convert(weather_zip['sys']['sunrise'])
 
-    temperature = weather['main']['temp']
+    temperature = weather_zip['main']['temp']
     tempF = TempConverter.convertKtoF(temperature)
 
     print ('\nCurrent time: ' + time)
@@ -81,29 +81,29 @@ def zipWeather(zip_code, api_key):
     tempC = TempConverter.convertKtoC(temperature)
     print ('Current temperature in Celsius: %.2f C' % tempC)
 
-    description = weather['weather'][0]['description'].title()
+    description = weather_zip['weather'][0]['description'].title()
     print ('Sky description: ' + description)
 
-    minTemperature = weather['main']['temp_min']
+    minTemperature = weather_zip['main']['temp_min']
     minTempF = TempConverter.convertKtoF(minTemperature)
     minTempC = TempConverter.convertKtoC(minTemperature)
     print ('Lows today are: %.2f F' % minTempF)
     print ('Lows today are: %.2f C' % minTempC)
-    maxTemperature = weather['main']['temp_max']
+    maxTemperature = weather_zip['main']['temp_max']
     maxTempF = TempConverter.convertKtoF(maxTemperature)
     maxTempC = TempConverter.convertKtoC(maxTemperature)
     print ('Highs today are: %.2f F' % maxTempF)
     print ('Highs today are: %.2f C' % maxTempC)
 
-    humidity = weather['main']['humidity']
+    humidity = weather_zip['main']['humidity']
     print ('Humidity: ' + str (humidity) + '%')
 
     #Wind speed measured in meters per second (mps)
-    windSpeed = weather['wind']['speed']*2.23694
+    windSpeed = weather_zip['wind']['speed']*2.23694
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
 
     #If deg is not given, does not work
-    windDirection = weather['wind']['deg']
+    windDirection = weather_zip['wind']['deg']
 
     #converts direction to NE, E, SE, S, SW, W, NW, or, N
     print ('Wind Direction: ' + convert2cardinal.convert2cardinal(windDirection))
