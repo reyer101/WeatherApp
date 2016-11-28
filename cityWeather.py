@@ -69,7 +69,7 @@ def cityDescription(weather_city):
     
     #If deg is not given, does not work
     if 'wind' in weather_city: 
-		wind = weather_city['wind']     
+	wind = weather_city['wind']     
     if 'deg' in wind:
     	windDirection = weather_city['wind']['deg']
     else:
