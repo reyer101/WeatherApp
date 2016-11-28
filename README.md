@@ -1,4 +1,4 @@
-README file for WeatherApp
+#WeatherApp
 
 @Authors:
     Megan Boyd (@boyd125)
