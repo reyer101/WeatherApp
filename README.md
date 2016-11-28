@@ -21,4 +21,12 @@ Current functionality:
     wind speed, and wind direction.
 
 Compilation:
+- The user must have the 'requests' library installed (at least in this current iteration)
+- How to install 'requests':
+  - If Pip is installed:
+    - Enter the command: pip install requests in the Git Bash window
+  - If Pip is NOT installed:
+    - Enter: git clone git://github.com/kennethreitz/requests.git
+    - Change current directory to requests
+    - Type in: python setup.py install
 - In Bash: python *.py
