@@ -21,4 +21,7 @@ Current functionality:
     wind speed, and wind direction.
 
 Compilation:
+
+**Note: Requires the python "request" library to be downloaded 
+
 - In Bash: python *.py
