@@ -6,7 +6,7 @@ README file for WeatherApp
     Sean Keelan (@keela101)
     Alec Reyerson (@reyer101)
 
-Date last updated: 11/26/2016
+Date last updated: 11/27/2016
 
 Various applications and methods exist by which individuals retrieve information on the weather conditions of a given city or region. This information can be utilized for preparations in traveling to these areas, for event planning, or other purposes. Such preparations allow for greater living comfort and economic convenience.
 
