@@ -68,7 +68,7 @@ def zipDescription(weather_zip):
     
     #If deg is not given, does not work
     if 'wind' in weather_zip: 
-		wind = weather_zip['wind']     
+	wind = weather_zip['wind']     
     if 'deg' in wind:
     	windDirection = weather_zip['wind']['deg']
     else:
