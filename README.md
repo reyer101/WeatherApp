@@ -29,4 +29,6 @@ Compilation:
     - Enter: git clone git://github.com/kennethreitz/requests.git
     - Change current directory to requests
     - Type in: python setup.py install
+  - Installation instructions for the 'requests' library can be found at:
+    http://docs.python-requests.org/en/master/user/install/
 - In Bash: python *.py
