@@ -7,7 +7,7 @@ import convert2cardinal
 def cityWeather(city, api_key):
     #city_api_key = api_key;
     weather = api_key.getWeatherCity(city)
-    print (weather)
+    #print (weather)
 
     ## weather['wind']['deg']
 
@@ -59,7 +59,7 @@ def cityWeather(city, api_key):
 def zipWeather(zip_code, api_key):
     #zip_api_key = api_key;
     weather_zip = api_key.getWeatherZip(zip_code)
-    print (weather_zip)
+    #print (weather_zip)
 
     ## weather['wind']['deg']
 
