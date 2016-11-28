@@ -67,7 +67,7 @@ def cityDescription(weather_city):
     windSpeed = weather_city['wind']['speed']*2.23694
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
     
-    #If deg is not given, does not work
+    #If deg is not given, return "No direction given"
     if 'wind' in weather_city: 
 	wind = weather_city['wind']     
     if 'deg' in wind:
