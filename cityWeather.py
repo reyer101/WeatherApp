@@ -68,7 +68,12 @@ def cityDescription(weather_city):
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
     
     #If deg is not given, does not work
-    windDirection = weather_city['wind']['deg']
+    if 'wind' in weather_city: 
+		wind = weather_city['wind']     
+    if 'deg' in wind:
+    	windDirection = weather_city['wind']['deg']
+    else:
+    	windDirection = "No direction given"
     #converts direction to NE, E, SE, S, SW, W, NW, or, N
     print ('Wind Direction: ' + convert2cardinal.convert2cardinal(windDirection))
 
