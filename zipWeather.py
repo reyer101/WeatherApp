@@ -66,7 +66,7 @@ def zipDescription(weather_zip):
     windSpeed = weather_zip['wind']['speed']*2.23694
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
     
-    #If deg is not given, does not work
+    #If deg is not given, return "No direction given"
     if 'wind' in weather_zip: 
 	wind = weather_zip['wind']     
     if 'deg' in wind:
