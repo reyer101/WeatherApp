@@ -32,3 +32,9 @@ Compilation:
   - Installation instructions for the 'requests' library can be found at:
     http://docs.python-requests.org/en/master/user/install/
 - In Bash: python *.py
+
+Contributions- 
+Megan-
+Elia-
+Sean-
+Alec-
