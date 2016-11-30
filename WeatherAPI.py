@@ -41,3 +41,5 @@ class WeatherAPI(object):
             key=Consts.KEY
         ))
 
+        return response
+
