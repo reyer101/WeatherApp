@@ -43,7 +43,7 @@ def configureWidgets():
 
     cityWeatherButton.configure(text="WEATHER BY CITY", height=2, width=20, command=cityWeatherAction)
     zipWeatherButton.configure(text="WEATHER BY ZIP", height=2, width=20, command=zipWeatherAction)
-    cityForecastButton.configure(text="FORECAST BY CITY", height=2, width=20)
+    cityForecastButton.configure(text="FORECAST BY CITY", height=2, width=20, command=cityForecastAction)
 
 
 def cityWeatherAction():       #Triggered when "Weather by City" button is pressed
@@ -97,12 +97,12 @@ def zipWeatherAction():
     innerFrame = Frame(zwWindow)
     outterFrame = Frame(zwWindow)
 
-    cityLabel = Label(zwWindow)
+    zipLabel = Label(zwWindow)
     zipEntry = Entry(zwWindow)
     weatherButton = Button(zwWindow)
     zipWeatherDisplay = ScrolledText(zwWindow)
 
-    cityLabel.pack(in_=innerFrame, side=LEFT)  # Packs inner Frame
+    zipLabel.pack(in_=innerFrame, side=LEFT)  # Packs inner Frame
     zipEntry.pack(in_=innerFrame, side=RIGHT)
 
     innerFrame.pack(in_=outterFrame, side=TOP)  # Packs outter Frame
@@ -114,9 +114,40 @@ def zipWeatherAction():
     outterFrame.configure(background="light sky blue")
     innerFrame.configure(pady=4, background="light sky blue")
     weatherButton.configure(width=10, height=1, text="GET WEATHER", command=getZipWeatherAction)  # Configures widgets
-    cityLabel.configure(width=7, height=1, text="Zip Code", relief=SUNKEN)
+    zipLabel.configure(width=7, height=1, text="Zip Code", relief=SUNKEN)
     zipWeatherDisplay.configure(width=45, height=17, pady=3, padx=3)
 
+def cityForecastAction():
+    cfWindow = Toplevel()
+    cfWindow.geometry("400x400")
+    cfWindow.title('CityForecast')
+    cfWindow.configure(background="light sky blue")
+
+    global forecastDisplay
+    global cityFEntry
+
+    innerFrame = Frame(cfWindow)
+    outterFrame = Frame(cfWindow)
+
+    cityLabel = Label(cfWindow)
+    cityFEntry = Entry(cfWindow)
+    forecastButton = Button(cfWindow)
+    forecastDisplay = ScrolledText(cfWindow)
+
+    cityLabel.pack(in_=innerFrame, side=LEFT)  # Packs inner Frame
+    cityFEntry.pack(in_=innerFrame, side=RIGHT)
+
+    innerFrame.pack(in_=outterFrame, side=TOP)  # Packs outter Frame
+    forecastDisplay.pack(in_=outterFrame, side=BOTTOM)
+    forecastButton.pack(in_=outterFrame, side=BOTTOM)
+
+    outterFrame.grid(column=0, row=0, padx=3, pady=3)  # Places outter Frame
+
+    outterFrame.configure(background="light sky blue")
+    innerFrame.configure(pady=4, background="light sky blue")
+    forecastButton.configure(width=11, height=1, text="GET FORECAST", command=getCityForecastAction)  # Configures widgets
+    cityLabel.configure(width=7, height=1, text="City", relief=SUNKEN)
+    forecastDisplay.configure(width=45, height=17, pady=3, padx=3)
 
 
 def getCityWeatherAction():
@@ -129,7 +160,14 @@ def getZipWeatherAction():
     zip = str(zipEntry.get())     #Sets the zip as the string value of the zipEntry box
     weather = zipWeather.zipWeather(zip)
 
-    zipWeatherDisplay.insert(END, weather)
+    zipWeatherDisplay.insert(END, weather)  #Sets the city as the string value of the cityFEntry box
+
+def getCityForecastAction():
+    city = str(cityFEntry.get())
+    forecast = cityForecast.getCityForecast(city)
+
+    forecastDisplay.insert(END, forecast)
+
 
 
 def fpToString(value, decimalPositions):

@@ -12,6 +12,8 @@ def main():
 
     MenuWindow.init()
 
+    #print cityForecast.getCityForecast("Orange")
+
     #print cityWeather.cityWeather()
 
 
