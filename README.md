@@ -70,8 +70,8 @@ Compilation & Installations:
 
 - In Bash: python *.py
 
-Contributions-
-Megan-
-Elia-
-Sean-
-Alec- Handled all request functions to retrieve data from the api, added forecast functionlity, worked on converting time and dates
+Contributions:
+Megan:
+Elia:
+Sean:
+Alec: Handled all request functions to retrieve data from the api, added forecast functionlity, worked on converting time and dates
