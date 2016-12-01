@@ -167,16 +167,3 @@ def getCityForecastAction():
     forecast = cityForecast.getCityForecast(city)
 
     forecastDisplay.insert(END, forecast)
-
-
-
-def fpToString(value, decimalPositions):
-    string = str(round(value, decimalPositions));
-    periodPosition = string.find('.');
-    if (periodPosition >= 0):
-        string = string[0: periodPosition + decimalPositions + 1];
-    return string;
-    # Example: fpToString(value = 3.14159, decimalPositions = 2) returns '3.14'.
-
-# Create the GUI and show it:
-

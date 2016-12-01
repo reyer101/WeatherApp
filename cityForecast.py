@@ -2,7 +2,6 @@ from WeatherAPI import WeatherAPI
 from datetime import date
 import WeatherConsts as Consts
 import TempConverter
-import TimeConverter
 
 api = WeatherAPI(Consts.KEY)
 
@@ -38,11 +37,6 @@ def getCityTemps(forecast_city):
                  + getCityDescriptions(forecast_city, i) \
                  + 'Lows today are: %.2f F' % minTempF + '\n' \
                  + 'Highs today are: %.2f F' % maxTempF + '\n' + '\n' \
-
-        #print ('Lows today are: %.2f F' % minTempF)
-        #print ('Highs today are: %.2f F' % maxTempF)
-
-        #print(" ")
 
         i=i+8
 
