@@ -66,10 +66,14 @@ def zipDescription(weather_zip):
     windSpeed = weather_zip['wind']['speed']*2.23694
     print ('Wind Speed: %.2f' % (windSpeed) + " mph")
     
-    #If deg is not given, does not work
-    windDirection = weather_zip['wind']['deg']
+    #If deg is not given, return "No direction given"
+    if 'wind' in weather_zip: 
+		wind = weather_zip['wind']     
+    if 'deg' in wind:
+    	windDirection = weather_zip['wind']['deg']
+    else:
+    	windDirection = "No direction given"
     #converts direction to NE, E, SE, S, SW, W, NW, or, N
     print ('Wind Direction: ' + convert2cardinal.convert2cardinal(windDirection))
-
 
     

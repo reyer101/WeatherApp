@@ -33,3 +33,13 @@ class WeatherAPI(object):
 
         return response
 
+    def getForecastCity(self, city):
+
+        response = self._request(Consts.URL['forecast'].format(
+            city=city,
+            country='us',
+            key=Consts.KEY
+        ))
+
+        return response
+
