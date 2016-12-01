@@ -25,10 +25,47 @@ Compilation:
 - How to install 'requests':
   - If Pip is installed:
     - Enter the command: pip install requests in the Git Bash window
+    - OR Enter: python.exe -m pip install requests
+  - How to upgrade Pip if not currently updated:
+    - On Linux or Mac, enter: pip install -U pip
+    - On Windows, enter: python -m pip install -U pip
+  - Instructions to install Pip can be found at:
+      http://docs.python-guide.org/en/latest/starting/installation/
   - If Pip is NOT installed:
-    - Enter: git clone git://github.com/kennethreitz/requests.git
+    - Go to your home directory
+    - Enter the command: git clone git://github.com/kennethreitz/requests.git
     - Change current directory to requests
-    - Type in: python setup.py install
+    - Enter the command: python setup.py install
   - Installation instructions for the 'requests' library can be found at:
     http://docs.python-requests.org/en/master/user/install/
+  - Installing the setuptools Python module if setuptools is NOT installed:
+    - Instructions can be found on the Python Software Foundation's
+      setuptools-29.0.1 : Python Package Index at the web address in the following
+      instructions.
+    - Go to: https://pypi.python.org/pypi/setuptools#downloads and download
+      the following files found at the bottom of the page:
+          setuptools-29.0.1-py2.py3-none-any.whl (md5)
+          setuptools-29.0.1.tar.gz (md5)
+          setuptools-29.0.1.zip (md5)
+      - Included in these downloads is a file called ez_setup.py. To install the
+        setuptools module:
+        - Windows
+          - In the PowerShell tool, download ez_setup.py using the following command:
+                (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | python -
+          - Run ez_setup.py with the command: python ez_setup.py
+        - Unix (Linux and Mac OSX)
+          - In your Unix terminal, download ez_setup.py using the following command:
+                wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+            - If you need to invoke the command using superuser privileges
+              (i.e. if you are restrited from using the previous command), enter:
+                  wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+            - Alternatively, if you have curl, you can instead enter thir command:
+                  curl https://bootstrap.pypa.io/ez_setup.py -o - | python
+          - Once ez_setup.py is downloaded, run ez_setup.py with the command:
+              python ez_setup.py
+          - If you are using an older version of Unix, the wget command may output
+            some error. If this is the case, enter:
+                wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
+                python ez_setup.py --insecure
+
 - In Bash: python *.py
