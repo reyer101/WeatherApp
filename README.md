@@ -20,7 +20,7 @@ Current functionality:
     Celsius, sky description, min/max temperatures of the day, humidity %,
     wind speed, and wind direction.
 
-Compilation:
+Compilation & Installations:
 - The user must have the 'requests' library installed (at least in this current iteration)
 - How to install 'requests':
   - If Pip is installed:
@@ -70,7 +70,7 @@ Compilation:
 
 - In Bash: python *.py
 
-Contributions- 
+Contributions-
 Megan-
 Elia-
 Sean-
