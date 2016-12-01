@@ -48,6 +48,37 @@ def cityWeatherAction():
     cwWindow = Toplevel()
     cwWindow.geometry("200x300")
 
+    global weatherDisplay
+
+    innerFrame = Frame(cwWindow)
+    outterFrame = Frame(cwWindow)
+
+
+
+    cityLabel = Label(cwWindow)
+    cityEntry = Entry(cwWindow)
+    weatherButton = Button(cwWindow)
+    weatherDisplay = ScrolledText(cwWindow)
+
+    cityLabel.pack(in_=innerFrame, side=LEFT)  #Packs inner Frame
+    cityEntry.pack(in_=innerFrame, side=RIGHT)
+
+
+    innerFrame.pack(in_=outterFrame, side=TOP)       #Packs outter Frame
+    weatherDisplay.pack(in_=outterFrame, side=BOTTOM)
+    weatherButton.pack(in_=outterFrame, side=BOTTOM)
+
+
+
+    outterFrame.grid(column=0, row=0, padx=3, pady=3)   #Places outter Frame
+
+
+
+    innerFrame.configure(pady=4)
+    weatherButton.configure(width=10, height=1, text="GET WEATHER")     #Configures widgets
+    cityLabel.configure(width=7, height=1, text="City", relief=SUNKEN)
+    weatherDisplay.configure(width=22, height=10, pady=3)
+
 
 
 
