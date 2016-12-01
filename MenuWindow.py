@@ -1,4 +1,6 @@
-
+import cityWeather
+import cityForecast
+import zipWeather
 from Tkinter import *
 from ScrolledText import *
 
@@ -44,11 +46,14 @@ def configureWidgets():
     cityForecastButton.configure(text="FORECAST BY CITY", height=2, width=20)
 
 
-def cityWeatherAction():
+def cityWeatherAction():       #Triggered when "Weather by City" button is pressed
     cwWindow = Toplevel()
-    cwWindow.geometry("200x300")
+    cwWindow.geometry("400x400")
+    cwWindow.title('CityWeather')
+    cwWindow.configure(background="light sky blue")
 
     global weatherDisplay
+    global cityEntry
 
     innerFrame = Frame(cwWindow)
     outterFrame = Frame(cwWindow)
@@ -73,15 +78,18 @@ def cityWeatherAction():
     outterFrame.grid(column=0, row=0, padx=3, pady=3)   #Places outter Frame
 
 
-
-    innerFrame.configure(pady=4)
-    weatherButton.configure(width=10, height=1, text="GET WEATHER")     #Configures widgets
+    outterFrame.configure(background="light sky blue")
+    innerFrame.configure(pady=4, background="light sky blue")
+    weatherButton.configure(width=10, height=1, text="GET WEATHER", command=getCityWeatherAction)     #Configures widgets
     cityLabel.configure(width=7, height=1, text="City", relief=SUNKEN)
-    weatherDisplay.configure(width=22, height=10, pady=3)
+    weatherDisplay.configure(width=45, height=17, pady=3, padx=3)
 
 
+def getCityWeatherAction():
+    city = str(cityEntry.get())   #Sets the city as the string value of the cityEntry box
+    weather = cityWeather.cityWeather(city)
 
-
+    weatherDisplay.insert(END, weather)
 
 
 

@@ -12,6 +12,7 @@ def main():
 
     MenuWindow.init()
 
+    #print cityWeather.cityWeather()
 
 
 if __name__ == "__main__":
