@@ -42,7 +42,7 @@ def configureWidgets():
     column.configure(background="light sky blue")
 
     cityWeatherButton.configure(text="WEATHER BY CITY", height=2, width=20, command=cityWeatherAction)
-    zipWeatherButton.configure(text="WEATHER BY ZIP", height=2, width=20)
+    zipWeatherButton.configure(text="WEATHER BY ZIP", height=2, width=20, command=zipWeatherAction)
     cityForecastButton.configure(text="FORECAST BY CITY", height=2, width=20)
 
 
@@ -85,12 +85,51 @@ def cityWeatherAction():       #Triggered when "Weather by City" button is press
     weatherDisplay.configure(width=45, height=17, pady=3, padx=3)
 
 
+def zipWeatherAction():
+    zwWindow = Toplevel()
+    zwWindow.geometry("400x400")
+    zwWindow.title('ZipWeather')
+    zwWindow.configure(background="light sky blue")
+
+    global zipWeatherDisplay
+    global zipEntry
+
+    innerFrame = Frame(zwWindow)
+    outterFrame = Frame(zwWindow)
+
+    cityLabel = Label(zwWindow)
+    zipEntry = Entry(zwWindow)
+    weatherButton = Button(zwWindow)
+    zipWeatherDisplay = ScrolledText(zwWindow)
+
+    cityLabel.pack(in_=innerFrame, side=LEFT)  # Packs inner Frame
+    zipEntry.pack(in_=innerFrame, side=RIGHT)
+
+    innerFrame.pack(in_=outterFrame, side=TOP)  # Packs outter Frame
+    zipWeatherDisplay.pack(in_=outterFrame, side=BOTTOM)
+    weatherButton.pack(in_=outterFrame, side=BOTTOM)
+
+    outterFrame.grid(column=0, row=0, padx=3, pady=3)  # Places outter Frame
+
+    outterFrame.configure(background="light sky blue")
+    innerFrame.configure(pady=4, background="light sky blue")
+    weatherButton.configure(width=10, height=1, text="GET WEATHER", command=getZipWeatherAction)  # Configures widgets
+    cityLabel.configure(width=7, height=1, text="Zip Code", relief=SUNKEN)
+    zipWeatherDisplay.configure(width=45, height=17, pady=3, padx=3)
+
+
+
 def getCityWeatherAction():
     city = str(cityEntry.get())   #Sets the city as the string value of the cityEntry box
     weather = cityWeather.cityWeather(city)
 
     weatherDisplay.insert(END, weather)
 
+def getZipWeatherAction():
+    zip = str(zipEntry.get())     #Sets the zip as the string value of the zipEntry box
+    weather = zipWeather.zipWeather(zip)
+
+    zipWeatherDisplay.insert(END, weather)
 
 
 def fpToString(value, decimalPositions):
