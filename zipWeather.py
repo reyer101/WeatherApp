@@ -62,6 +62,7 @@ def zipDescription(weather_zip):
 		wind = weather_zip['wind']     
     if 'deg' in wind:
     	windDirection = weather_zip['wind']['deg']
+        windDirection = convert2cardinal.convert2cardinal(windDirection)
     else:
     	windDirection = "No direction given"
     #converts direction to NE, E, SE, S, SW, W, NW, or, N
@@ -69,3 +70,4 @@ def zipDescription(weather_zip):
     return 'Sky Description: ' + description + '\n' \
            + 'Humidity: ' + str(humidity) + '%' + '\n' \
            + 'Wind Speed: %.2f' % (windSpeed) + "mph" + '\n' \
+           + 'Wind Direction: ' + str(windDirection) + '\n'
