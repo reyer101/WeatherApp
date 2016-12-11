@@ -68,6 +68,10 @@ Compilation & Installations:
                 wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
                 python ez_setup.py --insecure
 
+To Run -
+    -Ensure all necessary components mentioned above are properly installed
+    -Run Main.py
+    -Follow GUI prompts
 - In Bash: python *.py
 
 Contributions:
@@ -75,3 +79,5 @@ Megan:
 Elia:
 Sean:
 Alec: Handled all request functions to retrieve data from the api, added forecast functionlity, worked on converting time and dates
+
+
